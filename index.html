@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fideicomiso San José | Inversiones Inmobiliarias</title>
+  <meta name="description" content="Fideicomiso San José. Inversiones inmobiliarias con sentido, crecimiento con raíces." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde-oscuro: #1f3d32;
+      --verde: #2f5d50;
+      --verde-claro: #f4f7f6;
+      --oro: #c5a059; /* Toque de elegancia */
+      --texto: #2c2c2c;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--texto);
+      line-height: 1.8;
+      background: var(--blanco);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    /* --- NAVEGACIÓN (Estilo Estancia) --- */
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .logo img {
+      height: 60px; /* Logo más grande y protagonista */
+      filter: brightness(0) invert(1); /* Hace el logo blanco para el hero */
+    }
+
+    .social-links a svg {
+      transition: transform 0.3s ease;
+      fill: white;
+    }
+
+    .social-links a:hover svg {
+      transform: scale(1.1);
+      fill: var(--oro);
+    }
+
+    /* --- HERO CON VIDEO --- */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hero-video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Capa para legibilidad */
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    /* --- SECCIONES --- */
+    section {
+      padding: 100px 0; /* Espaciado generoso */
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      color: var(--verde-oscuro);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 2px;
+      background: var(--oro);
+    }
+
+    /* --- BOTONES --- */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: var(--verde-oscuro);
+    }
+
+    .btn-dark {
+      border-color: var(--verde);
+      color: var(--verde);
+    }
+
+    .btn-dark:hover {
+      background: var(--verde);
+      color: #fff;
+    }
+
+    /* --- GRID DE SERVICIOS --- */
+    .grid-proyectos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .card {
+      background: var(--verde-claro);
+      padding: 3rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--verde);
+      font-size: 1.5rem;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #111;
+      color: #888;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      section { padding: 60px 0; }
+      .hero h1 { font-size: 2.8rem; }
+      .logo img { height: 45px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">
+        <img src="img/logo.png" alt="Fideicomiso San José" onerror="this.style.display='none';">
+        <span id="logo-text" style="color:white; font-family:'Playfair Display'; font-size: 1.5rem;">Fideicomiso San José</span>
+      </div>
+      <div class="social-links">
+        <a href="https://wa.me/5493425987697" target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12.04 2C6.57 2 2.1 6.48 2.1 11.95c0 1.93.5 3.8 1.45 5.45L2 22l4.74-1.53a9.9 9.9 0 005.3 1.55h.01c5.47 0 9.95-4.48 9.95-9.95C22 6.48 17.52 2 12.04 2zm5.8 14.42c-.25.7-1.45 1.33-2 1.42-.5.08-1.14.12-3.7-.77-3.27-1.14-5.38-4.6-5.55-4.84-.17-.24-1.33-1.78-1.33-3.4 0-1.62.85-2.42 1.15-2.75.3-.33.65-.41.87-.41.22 0 .43 0 .62.01.2.01.46-.08.72.55.25.63.85 2.18.92 2.33.08.15.13.33.02.53-.1.2-.15.33-.3.5-.15.17-.32.38-.45.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.05 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.77-.18 1.47z"/></svg>
+        </a>
+	<a href="https://instagram.com/fideicomiso_sanjose" target="_blank" aria-label="Instagram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#C13584" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm0 7.3A2.8 2.8 0 1114.8 12 2.8 2.8 0 0112 14.8zM17.25 6.25a1 1 0 11-1-1 1 1 0 011 1z"/>
+    </svg>
+  	</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-video-container">
+      <video autoplay muted loop playsinline poster="img/hero.jpg">
+        <source src="assets/video-drone.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <p>Crecimiento con Raíces</p>
+      <h1>Fideicomiso San José</h1>
+      <a href="#proyectos" class="btn">Explorar Proyectos</a>
+    </div>
+  </header>
+
+  <section id="nosotros">
+    <div class="container">
+      <div class="section-title">
+        <h2>Quiénes Somos</h2>
+      </div>
+      <div style="max-width: 800px; margin: auto; text-align: center;">
+        <p style="font-size: 1.2rem; color: #666;">En Fideicomiso San José reunimos la experiencia de quienes llevan años acompañando procesos de inversión inmobiliaria. Nuestro enfoque es claro: promover proyectos que conjuguen naturaleza, solidez jurídica y valor a futuro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-verde-claro" style="background-color: var(--verde-claro);">
+    <div class="container">
+      <div class="grid-proyectos">
+        <div class="card">
+          <h3>Gestión Responsable</h3>
+          <p>Administración transparente y ordenada de activos inmobiliarios.</p>
+        </div>
+        <div class="card">
+          <h3>Visión a Largo Plazo</h3>
+          <p>Proyectos pensados para preservar y potenciar valor con el tiempo.</p>
+        </div>
+        <div class="card">
+          <h3>Venta Directa</h3>
+          <p>Comercialización de activos propios, sin intermediaciones innecesarias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Barrio Privado Quiloazas</h2>
+        <p>Una oportunidad única en un entorno consolidado, integrado a la naturaleza, con infraestructura y servicios de calidad.</p>
+        <br>
+        <a href="#contacto" class="btn btn-dark">Solicitar Información</a>
+      </div>
+      <div style="flex: 1; min-width: 300px; background: #ddd; height: 400px; display: flex; align-items: center; justify-content: center;">
+        <p style="color: #999;">[ Galería de Fotos - Próximo Paso ]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="background: var(--verde-oscuro); color: white; text-align: center;">
+    <div class="container">
+      <h2 style="color: white; margin-bottom: 2rem;">¿Listo para invertir?</h2>
+      <p style="margin-bottom: 3rem; opacity: 0.8;">Contactanos para recibir asesoramiento personalizado sobre nuestros lotes disponibles.</p>
+      <a href="https://wa.me/5493425987697" class="btn">Escribir por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.7rem; margin-bottom: 1rem;">Fideicomiso San José © 2026</p>
+      <p>Santa Fe, Argentina</p>
+    </div>
+  </footer>
+
+</body>
+</html>
