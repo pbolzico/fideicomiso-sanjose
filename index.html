@@ -74,7 +74,37 @@
       padding: 10px;
     }
     .plano-wrapper img { display: block; min-width: 1000px; width: 100%; height: auto; }
+/* --- AJUSTE DE CENTRADO PARA EL PLANO --- */
+    .plano-section {
+      background-color: var(--verde-claro);
+      padding: 100px 0;
+    }
 
+    .plano-wrapper {
+      width: 100%;
+      overflow-x: auto; /* Permite el scroll horizontal */
+      border-radius: 15px;
+      background: var(--blanco);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+
+    .plano-scroll-container {
+      display: flex;
+      justify-content: center; /* ESTA LÍNEA CENTRA LA IMAGEN */
+      min-width: min-content; /* Asegura que el contenedor no se corte */
+    }
+
+    .plano-scroll-container img {
+      display: block;
+      max-width: 100%; /* Se adapta al ancho en PC */
+      height: auto;
+      min-width: 800px; /* Evita que se vea muy chico en móviles */
+    }
+
+    /* Estilización del scroll */
+    .plano-wrapper::-webkit-scrollbar { height: 6px; }
+    .plano-wrapper::-webkit-scrollbar-thumb { background: var(--oro); border-radius: 10px; }
     /* --- CARDS --- */
     .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
     .card { background: var(--verde-claro); padding: 3rem; text-align: center; transition: 0.3s; }
@@ -180,17 +210,21 @@
     </div>
   </section>
 
-  <section id="plano" class="plano-section">
+ <section id="plano" class="plano-section">
     <div class="container">
       <div class="section-title">
         <h2>Masterplan</h2>
         <p style="margin-top: 10px; color: #666;">Explora la distribución estratégica de los lotes y áreas verdes.</p>
       </div>
+
       <div class="plano-wrapper">
-        <img src="img/Plano Fideicomiso.jpg" alt="Plano General" onerror="this.src='https://via.placeholder.com/1200x800?text=Cargando+Plano...'">
+        <div class="plano-scroll-container">
+          <img src="img/Plano Fideicomiso.jpg" alt="Plano General" onerror="this.src='https://via.placeholder.com/1200x800?text=Cargando+Plano...'">
+        </div>
       </div>
+
       <div style="text-align: center; margin-top: 2rem;">
-        <p style="font-size: 0.9rem; color: var(--verde);">* Deslice para explorar el plano en dispositivos móviles</p>
+        <p style="font-size: 0.9rem; color: var(--verde);">* En dispositivos móviles, deslice para explorar el plano completo.</p>
       </div>
     </div>
   </section>
@@ -219,5 +253,6 @@
   </script>
 </body>
 </html>
+
 
 
