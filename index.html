@@ -15,7 +15,7 @@
       --verde-oscuro: #1f3d32;
       --verde: #2f5d50;
       --verde-claro: #f4f7f6;
-      --oro: #c5a059; /* Toque de elegancia */
+      --oro: #c5a059;
       --texto: #2c2c2c;
       --blanco: #ffffff;
     }
@@ -43,7 +43,7 @@
       font-weight: 600;
     }
 
-    /* --- NAVEGACIÓN (Estilo Estancia) --- */
+    /* --- NAVEGACIÓN --- */
     .topbar {
       position: absolute;
       top: 0;
@@ -64,8 +64,8 @@
     }
 
     .logo img {
-      height: 60px; /* Logo más grande y protagonista */
-      filter: brightness(0) invert(1); /* Hace el logo blanco para el hero */
+      height: 60px;
+      filter: brightness(0) invert(1);
     }
 
     .social-links a svg {
@@ -78,7 +78,7 @@
       fill: var(--oro);
     }
 
-    /* --- HERO CON VIDEO --- */
+    /* --- HERO --- */
     .hero {
       position: relative;
       height: 100vh;
@@ -112,7 +112,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Capa para legibilidad */
+      background: rgba(0, 0, 0, 0.4);
       z-index: 0;
     }
 
@@ -136,10 +136,62 @@
       margin-bottom: 2rem;
       text-transform: uppercase;
     }
+/* Contenedor del Carrusel */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Foto principal (Grande) */
+.main-window {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.main-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/* Miniaturas (Pequeñas) */
+.thumb-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  justify-content: center; /* ESTA LÍNEA CENTRA LAS FOTOS */
+  margin-top: 15px;      /* Espacio entre la foto grande y las pequeñas */
+}
+
+.thumb-strip img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.thumb-strip img:hover, .thumb-strip img.active {
+  opacity: 1;
+  border-color: var(--oro);
+}
+
+/* Ocultar scroll */
+.thumb-strip::-webkit-scrollbar { display: none; }
 
     /* --- SECCIONES --- */
     section {
-      padding: 100px 0; /* Espaciado generoso */
+      padding: 100px 0;
     }
 
     .container {
@@ -200,7 +252,7 @@
       color: #fff;
     }
 
-    /* --- GRID DE SERVICIOS --- */
+    /* --- GRID --- */
     .grid-proyectos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -224,7 +276,6 @@
       font-size: 1.5rem;
     }
 
-    /* --- FOOTER --- */
     footer {
       background: #111;
       color: #888;
@@ -232,13 +283,14 @@
       text-align: center;
     }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
       section { padding: 60px 0; }
       .hero h1 { font-size: 2.8rem; }
       .logo img { height: 45px; }
     }
   </style>
+  
+  <script src="https://elfsightcdn.com/platform.js" async></script>
 </head>
 <body>
 
@@ -252,11 +304,9 @@
         <a href="https://wa.me/5493425987697" target="_blank">
           <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12.04 2C6.57 2 2.1 6.48 2.1 11.95c0 1.93.5 3.8 1.45 5.45L2 22l4.74-1.53a9.9 9.9 0 005.3 1.55h.01c5.47 0 9.95-4.48 9.95-9.95C22 6.48 17.52 2 12.04 2zm5.8 14.42c-.25.7-1.45 1.33-2 1.42-.5.08-1.14.12-3.7-.77-3.27-1.14-5.38-4.6-5.55-4.84-.17-.24-1.33-1.78-1.33-3.4 0-1.62.85-2.42 1.15-2.75.3-.33.65-.41.87-.41.22 0 .43 0 .62.01.2.01.46-.08.72.55.25.63.85 2.18.92 2.33.08.15.13.33.02.53-.1.2-.15.33-.3.5-.15.17-.32.38-.45.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.05 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.13.07.77-.18 1.47z"/></svg>
         </a>
-	<a href="https://instagram.com/fideicomiso_sanjose" target="_blank" aria-label="Instagram">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#C13584" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm0 7.3A2.8 2.8 0 1114.8 12 2.8 2.8 0 0112 14.8zM17.25 6.25a1 1 0 11-1-1 1 1 0 011 1z"/>
-    </svg>
-  	</a>
+        <a href="https://instagram.com/fideicomiso_sanjose" target="_blank" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#C13584"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm0 7.3A2.8 2.8 0 1114.8 12 2.8 2.8 0 0112 14.8zM17.25 6.25a1 1 0 11-1-1 1 1 0 011 1z"/></svg>
+        </a>
       </div>
     </div>
   </nav>
@@ -268,7 +318,6 @@
       </video>
     </div>
     <div class="hero-overlay"></div>
-    
     <div class="hero-content">
       <p>Crecimiento con Raíces</p>
       <h1>Fideicomiso San José</h1>
@@ -306,19 +355,38 @@
     </div>
   </section>
 
-  <section id="proyectos">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
-      <div style="flex: 1; min-width: 300px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Barrio Privado Quiloazas</h2>
-        <p>Una oportunidad única en un entorno consolidado, integrado a la naturaleza, con infraestructura y servicios de calidad.</p>
-        <br>
-        <a href="#contacto" class="btn btn-dark">Solicitar Información</a>
-      </div>
-      <div style="flex: 1; min-width: 300px; background: #ddd; height: 400px; display: flex; align-items: center; justify-content: center;">
-        <p style="color: #999;">[ Galería de Fotos - Próximo Paso ]</p>
+<section id="proyectos">
+  <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+    
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Barrio Privado Quiloazas</h2>
+      <p>Una oportunidad única en un entorno consolidado, integrado a la naturaleza, con infraestructura y servicios de calidad.</p>
+      <br>
+      <a href="#contacto" class="btn btn-dark">Solicitar Información</a>
+    </div>
+
+    <div style="flex: 1.5; min-width: 300px;">
+      <div class="carousel-container">
+        <div class="main-window">
+          <img id="active-img" src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F1%20Portal.jpeg" alt="Portal">
+        </div>
+        
+        <div class="thumb-strip" style="display: flex; gap: 10px; overflow-x: auto; margin-top: 15px; justify-content: center;">
+  <img src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F1%20Portal.jpeg" class="active" onclick="view(this)" style="width:80px; height:60px; object-fit:cover; cursor:pointer; border-radius:6px;">
+  <img src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F2%20Vista%20superior.jpeg" onclick="view(this)" style="width:80px; height:60px; object-fit:cover; cursor:pointer; border-radius:6px;">
+  <img src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F3%20Vista%20primer%20manzana.jpeg" onclick="view(this)" style="width:80px; height:60px; object-fit:cover; cursor:pointer; border-radius:6px;">
+  <img src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F4%20Fondo.jpeg" onclick="view(this)" style="width:80px; height:60px; object-fit:cover; cursor:pointer; border-radius:6px;">
+  <img src="https://raw.githubusercontent.com/pbolzico/fideicomiso-sanjose/main/img/F5%20Fondo%20superior%20natural.jpeg" onclick="view(this)" style="width:80px; height:60px; object-fit:cover; cursor:pointer; border-radius:6px;">
+</div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+    
+  </div>
+</section>
 
   <section id="contacto" style="background: var(--verde-oscuro); color: white; text-align: center;">
     <div class="container">
@@ -334,6 +402,15 @@
       <p>Santa Fe, Argentina</p>
     </div>
   </footer>
-
+	<script>
+  function view(imgElement) {
+    // Cambia la imagen principal por la de la miniatura clickeada
+    document.getElementById('active-img').src = imgElement.src;
+    
+    // Quita el marco dorado de todas las miniaturas y lo pone en la actual
+    document.querySelectorAll('.thumb-strip img').forEach(img => img.classList.remove('active'));
+    imgElement.classList.add('active');
+  }
+</script>
 </body>
 </html>
