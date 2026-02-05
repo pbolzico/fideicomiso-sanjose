@@ -42,7 +42,51 @@
       font-family: 'Playfair Display', serif;
       font-weight: 600;
     }
+/* --- SECCIÓN PLANO --- */
+    .plano-section {
+      background-color: var(--blanco);
+      overflow: hidden;
+    }
 
+    .plano-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .plano-wrapper {
+      position: relative;
+      width: 100%;
+      overflow-x: auto; /* Permite scroll en móviles */
+      background: #f9f9f9;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+
+    .plano-wrapper img {
+      display: block;
+      min-width: 800px; /* Asegura que no se vea minúsculo en móvil */
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+      cursor: zoom-in;
+    }
+
+    .plano-wrapper:hover img {
+      transform: scale(1.02); /* Efecto sutil de zoom */
+    }
+
+    /* Estilización del scrollbar para la sección del plano */
+    .plano-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+    .plano-wrapper::-webkit-scrollbar-thumb {
+      background: var(--oro);
+      border-radius: 10px;
+    }
     /* --- NAVEGACIÓN --- */
     .topbar {
       position: absolute;
@@ -388,7 +432,22 @@
     
   </div>
 </section>
-
+<section id="plano" class="plano-section">
+    <div class="plano-container">
+      <div class="section-title">
+        <h2>Masterplan</h2>
+        <p style="margin-top: 10px; color: #666;">Explora la distribución estratégica de los lotes y áreas verdes.</p>
+      </div>
+      
+      <div class="plano-wrapper">
+        <img src="img/Plano Fideicomiso.jpg" alt="Plano General Fideicomiso San José" onerror="this.src='https://via.placeholder.com/1200x800?text=Plano+en+Carga'">
+      </div>
+      
+      <div style="margin-top: 2rem;">
+        <p style="font-size: 0.9rem; color: var(--verde);">* Deslice para ver el plano completo en dispositivos móviles</p>
+      </div>
+    </div>
+  </section>
   <section id="contacto" style="background: var(--verde-oscuro); color: white; text-align: center;">
     <div class="container">
       <h2 style="color: white; margin-bottom: 2rem;">¿Listo para invertir?</h2>
@@ -416,3 +475,4 @@
 </body>
 
 </html>
+
