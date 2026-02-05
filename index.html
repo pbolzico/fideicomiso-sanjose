@@ -152,13 +152,19 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-video-container">
-      <video autoplay muted loop playsinline>
-        <source src="assets/video-drone.mp4" type="video/mp4">
-      </video>
+ <header class="hero" style="position: relative; overflow: hidden;">
+    <div class="hero-video-container" style="pointer-events: none;">
+      <iframe 
+        style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%);" 
+        src="https://www.youtube.com/embed/eQ1W0waGgUs?autoplay=1&mute=1&loop=1&playlist=eQ1W0waGgUs&controls=0&showinfo=0&rel=0&iv_load_policy=3" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
     </div>
+    
     <div class="hero-overlay"></div>
+    
     <div class="hero-content">
       <p>Crecimiento con Raíces</p>
       <h1>Fideicomiso San José</h1>
@@ -264,6 +270,7 @@
   </script>
 </body>
 </html>
+
 
 
 
