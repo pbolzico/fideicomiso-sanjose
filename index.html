@@ -188,6 +188,65 @@
       .hero h1 { font-size: 2.8rem; }
       .main-window { height: 250px; }
     }
+
+    /* --- FAQs --- */
+.faq-section {
+  background: var(--verde-claro);
+  padding: 80px 0;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  background: var(--blanco);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: var(--oro);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+  padding: 0 2rem 1.8rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
   </style>
 </head>
 <body>
@@ -332,6 +391,86 @@
     </div>
   </section>
 
+<section class="faq-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question">¿Qué es Fideicomiso San José?</button>
+        <div class="faq-answer">
+          <p>
+            Fideicomiso San José es una estructura jurídica creada para administrar
+            y vender activos inmobiliarios propios, garantizando transparencia,
+            seguridad legal y trato directo con los interesados.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">¿Cuál es el vínculo con Barrio Quiloazas?</button>
+        <div class="faq-answer">
+          <p>
+            Actualmente, el fideicomiso comercializa lotes correspondientes
+            al proyecto Barrio Quiloazas, formando parte de los activos
+            administrados bajo esta estructura.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">¿La compra es directa o hay intermediarios?</button>
+        <div class="faq-answer">
+          <p>
+            La comercialización es directa. No existen intermediarios innecesarios:
+            las condiciones de precio, financiación y disponibilidad se conversan
+            personalmente con los responsables del proyecto.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">¿Qué seguridad jurídica ofrece el fideicomiso?</button>
+        <div class="faq-answer">
+          <p>
+            Los bienes forman parte de un patrimonio independiente,
+            administrado conforme a un contrato de fideicomiso,
+            lo que brinda previsibilidad, orden y respaldo legal
+            a la operación.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">¿Existen opciones de financiación?</button>
+        <div class="faq-answer">
+          <p>
+            Sí. Las alternativas de financiación se analizan caso por caso,
+            de manera directa y transparente, según el proyecto y la etapa
+            de comercialización.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">¿Habrá otros proyectos en el futuro?</button>
+        <div class="faq-answer">
+          <p>
+            El objetivo del fideicomiso es administrar y vender distintos
+            activos inmobiliarios. Quiloazas es el proyecto vigente,
+            pero podrán incorporarse otros desarrollos a futuro.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  
   <footer>
     <div class="container">
       <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.7rem; margin-bottom: 1rem;">Fideicomiso San José © 2026</p>
@@ -346,8 +485,31 @@
       imgElement.classList.add('active');
     }
   </script>
+  <script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const answer = item.querySelector('.faq-answer');
+
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = null;
+        item.classList.remove('active');
+      } else {
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
