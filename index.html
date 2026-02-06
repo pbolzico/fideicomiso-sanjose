@@ -34,7 +34,23 @@
     .logo img { height: 60px; /*filter: brightness(0) invert(1); }
     .social-links a svg { transition: transform 0.3s ease; fill: white; }
     .social-links a:hover svg { transform: scale(1.1); fill: var(--oro); */}
-.social-links a svg {
+.logo svg {
+  width: 72px;
+  height: auto;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .logo svg {
+    width: 56px;
+  }
+}
+.logo svg {
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
+}
+
+    
+    .social-links a svg {
   opacity: 0.9;
 }
 
@@ -157,6 +173,28 @@
 
   <nav class="topbar">
     <div class="topbar-inner">
+      <div class="logo">
+ <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Círculo exterior -->
+  <circle cx="50" cy="50" r="42" stroke="white" stroke-width="2"/>
+
+  <!-- Tallos centrales -->
+  <path d="M50 30 V68" stroke="white" stroke-width="1.8"/>
+  <path d="M45 34 V68" stroke="white" stroke-width="1.2"/>
+  <path d="M55 34 V68" stroke="white" stroke-width="1.2"/>
+
+  <!-- Espigas izquierda -->
+  <path d="M50 34 C46 36, 44 38, 42 40" stroke="white" stroke-width="1"/>
+  <path d="M50 40 C46 42, 44 44, 42 46" stroke="white" stroke-width="1"/>
+  <path d="M50 46 C46 48, 44 50, 42 52" stroke="white" stroke-width="1"/>
+
+  <!-- Espigas derecha -->
+  <path d="M50 34 C54 36, 56 38, 58 40" stroke="white" stroke-width="1"/>
+  <path d="M50 40 C54 42, 56 44, 58 46" stroke="white" stroke-width="1"/>
+  <path d="M50 46 C54 48, 56 50, 58 52" stroke="white" stroke-width="1"/>
+</svg>
+
+</div>
             <div class="social-links">
         <a href="https://wa.me/5493425987697" target="_blank">
          <svg width="34" height="34" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -289,6 +327,7 @@
   </script>
 </body>
 </html>
+
 
 
 
