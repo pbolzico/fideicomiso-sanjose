@@ -102,19 +102,21 @@
     /* --- SECCIÓN MASTERPLAN (SALTO DE COLOR Y CENTRADO) --- */
     .plano-section { background-color: var(--verde-claro); }
     .plano-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      background: var(--blanco);
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      padding: 20px;
-    }
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* scroll suave iOS */
+  background: var(--blanco);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 20px;
+}
     .plano-scroll-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 100%;
-    }
+  display: flex;
+  justify-content: flex-start; /* clave */
+  align-items: center;
+  width: max-content; /* importante */
+}
     .plano-scroll-container img {
       max-width: 100%;
       height: auto;
@@ -266,6 +268,7 @@
   </script>
 </body>
 </html>
+
 
 
 
