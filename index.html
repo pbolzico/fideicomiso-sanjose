@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1.5rem; /* Lo mueve hacia abajo */
 }
 
 /* Social icons a la derecha */
@@ -54,16 +55,17 @@
 }
 
 .logo svg {
-  width: 72px;
+  width: 90px; /* Más grande */
   height: auto;
   opacity: 0.95;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
 }
 
 @media (max-width: 768px) {
-  .logo svg {
-    width: 56px;
-  }
+  .logo svg { width: 64px; }
+  .logo { margin-top: 1rem; }
 }
+    
 .logo svg {
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
 }
@@ -193,7 +195,7 @@
   <nav class="topbar">
     <div class="topbar-inner">
       <div class="logo">
- <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+ <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
   <!-- Círculo exterior -->
   <circle cx="50" cy="50" r="42" stroke="white" stroke-width="2"/>
 
@@ -346,6 +348,7 @@
   </script>
 </body>
 </html>
+
 
 
 
